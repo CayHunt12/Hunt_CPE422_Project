@@ -5,14 +5,13 @@
 #include <paho-mqtt/MQTTClient.h>
 #include "LED.h"
 
-#define AIO_USERNAME      "your_username"           // Replace with your Adafruit IO username
-#define AIO_KEY           "your_aio_key"            // Replace with your Adafruit IO key
-#define AIO_FEED          "your_username/feeds/blink" // Replace with your feed path
-
-#define ADDRESS           "tcp://io.adafruit.com:1883" // Adafruit IO MQTT server
-#define CLIENTID          "BeagleBoneBlackClient"
-#define QOS               1
-#define TIMEOUT           10000L
+ #define ADDRESS    "tcp://io.adafruit.com"
+ #define CLIENTID   "Beagle1"
+ #define TOPIC      "CayHunt12/feeds/weather.temperature"
+ #define AUTHMETHOD "CayHunt12"
+ #define AUTHTOKEN  "aio_KuOb45KdXFxgQEWMxE0dedqi8VGd"
+ #define QOS        1
+ #define TIMEOUT    10000L
 
 void on_message(void* context, char* topicName, int topicLen, MQTTClient_message* message) {
     LED* usr3 = static_cast<LED*>(context);
