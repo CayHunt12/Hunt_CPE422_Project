@@ -2,11 +2,13 @@
 #include <mqtt/async_client.h>  // Paho MQTT library
 #include "AnalogIn.h"
 
-const std::string SERVER_ADDRESS("tcp://io.adafruit.com:1883");
-const std::string CLIENT_ID("BeagleBone_Temp_Publisher");
-const std::string TOPIC("your_username/feeds/temperature");  // Replace with your AIO feed
-const std::string AIO_USERNAME("your_username");             // Adafruit IO username
-const std::string AIO_KEY("your_aio_key");                   // Adafruit IO key
+ #define ADDRESS    "tcp://io.adafruit.com"
+ #define CLIENTID   "Beagle1"
+ #define TOPIC      "CayHunt12/feeds/weather.temperature"
+ #define AUTHMETHOD "CayHunt12"
+ #define AUTHTOKEN  "aio_KuOb45KdXFxgQEWMxE0dedqi8VGd"
+ #define QOS        1
+ #define TIMEOUT    10000L
 
 int main() {
     AnalogIn temp_sensor(0);  // Assume temperature sensor on ADC0
